@@ -17,6 +17,7 @@ def caesar_cipher(text, key, mode):
 # User input
 while True:
     message = input("Enter your message: ")
+    
     while True:
         try:
             key_value = int(input("Enter key value: "))
@@ -25,6 +26,7 @@ while True:
             print("Invalid input. Please enter an integer for the key value.")
     
     mode_input = input("Enter mode (E for encrypt / D for decrypt): ").strip().upper()
+    
     if mode_input == 'E':
         mode = 'encrypt'
     elif mode_input == 'D':
@@ -36,8 +38,10 @@ while True:
     if mode in ['encrypt', 'decrypt']:
         result = caesar_cipher(message, key_value, mode)
         print(f"Result: {result}")
-    else:
-        print("Invalid mode. Please use 'encrypt' or 'decrypt'.")
-    again = input("Do you want to try again? (yes/no): ").strip().lower()
-    if again != 'yes':
-        break  
+    
+    again = input("Do you want to try again? (Y/N): ").strip().lower()
+    
+    if again != 'y':
+        print("Thank you for using the Caesar Cipher program!")
+        break
+  
